@@ -1,6 +1,8 @@
 <strong>Requirements</strong><br>
-1.You need to configure aws access key and secret access key to run the project.
-2.Install Latest version of Terraform.
+<ol>
+<li>You need to configure aws access key and secret access key to run the project.</li>
+<li>Install Latest version of Terraform.</li>
+</ol>
 
 <h4>Commands to execute</h4>
 <h6>Navigate to terraformScripts folder </h6>
