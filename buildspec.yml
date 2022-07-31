@@ -5,10 +5,11 @@ phases:
       runtime-versions:
         nodejs: 16
       commands:
-        -echo "instaling node"
+        - echo "instaling node"
     pre_build:
       commands:
         - cd $CODEBUILD_SRC_DIR
+        - ls -la
         - cp -Rp . /tmp
         - cd /tmp
         - ls -la
