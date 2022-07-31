@@ -26,7 +26,7 @@ resource "random_string" "r" {
 data "archive_file" "filezip" {
   type        = "zip"
   source_dir  = "lambda"
-  output_path = "lambda-archive.zip"
+  output_path = "dist/lambda-archive.zip"
   depends_on = [
     random_string.r
   ]
