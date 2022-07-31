@@ -6,7 +6,7 @@ phases:
         nodejs: 14
       commands:
         -echo "instaling node"
-    pre-build:
+    pre_build:
       commands:
         -echo "we are in pre built phase"
     build:
