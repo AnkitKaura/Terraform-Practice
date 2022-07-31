@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AnkitKaura/Terraform-Practice/issues"
   },
-  "homepage": "https://github.com/AnkitKaura/Terraform-Practice#readme"
+  "homepage": "https://github.com/AnkitKaura/Terraform-Practice#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
