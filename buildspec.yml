@@ -1,19 +1,28 @@
-version : 0.2
+version: 0.2
 
 phases:
     install:
       runtime-versions:
-        nodejs: 14
+        nodejs: 16
       commands:
         -echo "instaling node"
     pre_build:
       commands:
-        -echo "we are in pre built phase"
+        - cd $CODEBUILD_SRC_DIR
+        - cp -Rp . /tmp
+        - cd /tmp
+        - ls -la
+        - echo "we are in pre built phase"
     build:
       commands:
-        -echo "we are in build block"
-        -npm install
-        -echo "nothing to build continue"
+        - echo "we are in build block"
+        - node -v
+        - npm install
+        - echo "nothing to build continue"
     post_build:
       commands:
-        -echo "post build don"
+        - echo "post build done"
+artifacts:
+  files:
+    - '**/*'
+  base-directory: dist
