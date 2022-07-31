@@ -12,7 +12,7 @@ phases:
     build:
       commands:
         -echo "we are in build block"
-        - npm install
+        -npm install
         -echo "nothing to build continue"
     post_build:
       commands:
