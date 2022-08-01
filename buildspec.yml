@@ -41,7 +41,7 @@ phases:
         # - ls $BUILD_OUTPUT_ARTIFACTS
         - terraform init
         - terraform plan -out="dev.tfplan"
-        - terraform apply "dev.tfplan" -auto-approve
+        - terraform apply "dev.tfplan"
 artifacts:
   files:
     - '**/*'
