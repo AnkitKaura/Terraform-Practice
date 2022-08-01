@@ -42,6 +42,7 @@ phases:
         - terraform init
         - terraform plan -out="dev.tfplan"
         - terraform apply "dev.tfplan"
+        - terraform destroy -auto-approve
 artifacts:
   files:
     - '**/*'
