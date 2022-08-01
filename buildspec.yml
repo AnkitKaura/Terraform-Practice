@@ -23,7 +23,7 @@ phases:
       commands:
         - echo "we are in build block"
         - node -v
-        - npm install
+        - npm ci
         - echo "nothing to build continue"
     post_build:
       commands:
@@ -34,13 +34,15 @@ phases:
         - mv terraform /bin
         - rm terraform_1.1.3_linux_amd64.zip
         - terraform -v
-        - export BUILD_OUTPUT_ARTIFACTS="/buildoutputartifacts"
-        - ln -s $CODEBUILD_SRC_DIR_buildOutput $BUILD_OUTPUT_ARTIFACTS
-        - ls $BUILD_OUTPUT_ARTIFACTS
+        - pwd
+        - ls -la
+        # - export BUILD_OUTPUT_ARTIFACTS="/buildoutputartifacts"
+        # - ln -s $CODEBUILD_SRC_DIR_buildOutput $BUILD_OUTPUT_ARTIFACTS
+        # - ls $BUILD_OUTPUT_ARTIFACTS
         - terraform init
         - terraform plan -out="dev.tfplan"
         - terraform apply -auto-approve
 artifacts:
   files:
     - '**/*'
-  base-directory: dist
+  discard-paths: yes
