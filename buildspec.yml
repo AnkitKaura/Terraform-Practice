@@ -39,12 +39,12 @@ phases:
         # - export BUILD_OUTPUT_ARTIFACTS="/buildoutputartifacts"
         # - ln -s $CODEBUILD_SRC_DIR_buildOutput $BUILD_OUTPUT_ARTIFACTS
         # - ls $BUILD_OUTPUT_ARTIFACTS
-        - aws s3 sync $S3_FOR_TERRAFORM_STATE -- exclude "*" --include "*.tfstate*"
+        # - aws s3 sync $S3_FOR_TERRAFORM_STATE -- exclude "*" --include "*.tfstate*"
         - terraform init
         - terraform plan -out="dev.tfplan"
         - terraform apply "dev.tfplan"
         # - terraform destroy -auto-appro
-        - aws s3 sync . $S3_FOR_TERRAFORM_STATE --exclude "*" --include "*.tfstate*"
+        # - aws s3 sync . $S3_FOR_TERRAFORM_STATE --exclude "*" --include "*.tfstate*"
 artifacts:
   files:
     - '**/*'
