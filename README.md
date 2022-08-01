@@ -1,2 +1,2 @@
 # Terraform-Practice
-Code deployment done using Code pipeline
+Code deployment done using Code pipeline.
