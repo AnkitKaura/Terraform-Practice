@@ -9,7 +9,7 @@ phases:
       runtime-versions:
         nodejs: 16
       commands:
-        - echo "instaling node"
+        - echo "instaling nodejs v16"
     pre_build:
       commands:
         - cd $CODEBUILD_SRC_DIR
