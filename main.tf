@@ -7,7 +7,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "ap-south-1"
+  region = "us-east-1"
 }
 
 variable "lambda_zip" {
@@ -19,7 +19,7 @@ variable "lambda_function_name" {
 }
 
 resource "random_string" "r" {
-  length = 16
+  length  = 16
   special = false
 }
 
@@ -89,8 +89,8 @@ resource "aws_lambda_function" "test_lambda" {
   # The filebase64sha256() function is available in Terraform 0.11.12 and later
   # For Terraform 0.11.11 and earlier, use the base64sha256() function and the file() function:
   # source_code_hash = "${base64sha256(file("lambda_function_payload.zip"))}"
-  filename = data.archive_file.filezip.output_path
-  source_code_hash =  data.archive_file.filezip.output_base64sha256
+  filename         = data.archive_file.filezip.output_path
+  source_code_hash = data.archive_file.filezip.output_base64sha256
 
   runtime = "nodejs14.x"
 
